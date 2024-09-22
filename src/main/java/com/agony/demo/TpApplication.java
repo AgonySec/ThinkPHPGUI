@@ -11,7 +11,7 @@ public class TpApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(TpApplication.class.getResource("tp-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 766, 661);
+        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
 //        ComboBox<String> comboBox = (ComboBox<String>) fxmlLoader.getNamespace().get("comboBox");
 //        comboBox.setItems(Exp_list.get_exp());
 //        comboBox.setValue("ALL");

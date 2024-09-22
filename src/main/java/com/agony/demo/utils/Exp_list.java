@@ -13,7 +13,7 @@ public class Exp_list {
 
     public static  List<String> get_expList(){
 
-        return new ArrayList<>() {{
+        return new ArrayList<String>() {{
             add("ThinkPHP 2 RCE");
             add("ThinkPHP 5.0 RCE");
             add("ThinkPHP 5.0.10 RCE");

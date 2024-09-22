@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="661.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agony.demo.controller.TpController">
+<VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.agony.demo.controller.TpController">
    <MenuBar prefHeight="15.0" prefWidth="766.0">
      <menus>
        <Menu mnemonicParsing="false" text="配置">
@@ -29,44 +29,44 @@
        </Menu>
      </menus>
    </MenuBar>
-   <AnchorPane prefHeight="692.0" prefWidth="766.0">
+   <AnchorPane prefHeight="800.0" prefWidth="1200.0">
       <children>
          <Label layoutX="24.0" layoutY="14.0" text="URL：" />
-         <TextField fx:id="url" layoutX="85.0" layoutY="10.0" />
-         <Button fx:id="chech_vul_btn" layoutX="553.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckVul" text="验证" />
-         <TabPane layoutX="5.0" layoutY="78.0" prefHeight="554.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE">
+         <TextField fx:id="url" layoutX="85.0" layoutY="10.0" prefHeight="23.0" prefWidth="393.0" />
+         <Button fx:id="chech_vul_btn" layoutX="948.0" layoutY="10.0" mnemonicParsing="false" onAction="#CheckVul" prefHeight="23.0" prefWidth="91.0" text="验证" />
+         <TabPane layoutX="5.0" layoutY="86.0" prefHeight="686.0" prefWidth="1190.0" tabClosingPolicy="UNAVAILABLE">
            <tabs>
              <Tab text="检测信息">
                <content>
                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="456.0" prefWidth="758.0">
                         <children>
-                           <TextArea fx:id="checkInfo" layoutX="9.0" layoutY="9.0" prefHeight="511.0" prefWidth="746.0" />
+                           <TextArea fx:id="checkInfo" layoutX="9.0" layoutY="9.0" prefHeight="651.0" prefWidth="1182.0" />
                         </children>
                      </AnchorPane>
                </content>
              </Tab>
              <Tab text="命令执行">
                <content>
-                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="617.0" prefWidth="950.0">
                         <children>
-                           <Label layoutX="22.0" layoutY="14.0" text="命令" />
-                           <TextField fx:id="command" layoutX="68.0" layoutY="10.0" prefHeight="23.0" prefWidth="425.0" />
-                           <Button fx:id="cmd_btn" layoutX="515.0" layoutY="10.0" mnemonicParsing="false" onAction="#Command" text="执行" />
-                           <TextArea fx:id="commandInfo" layoutX="7.0" layoutY="33.0" prefHeight="489.0" prefWidth="744.0" />
+                           <Label layoutX="22.0" layoutY="14.0" text="命令：" />
+                           <TextField fx:id="command" layoutX="68.0" layoutY="10.0" prefHeight="23.0" prefWidth="954.0" />
+                           <Button fx:id="cmd_btn" layoutX="1046.0" layoutY="10.0" mnemonicParsing="false" onAction="#Command" text="执行" />
+                           <TextArea fx:id="commandInfo" layoutY="47.0" prefHeight="620.0" prefWidth="1190.0" />
                         </children>
                      </AnchorPane>
                </content>
              </Tab>
            </tabs>
          </TabPane>
-         <Label layoutX="261.0" layoutY="14.0" text="版本：" />
-         <ComboBox fx:id="comboBox" layoutX="308.0" layoutY="10.0" prefHeight="23.0" prefWidth="202.0" promptText="ALL" />
-         <Label layoutX="24.0" layoutY="42.0" text="路径：" />
-         <TextField fx:id="file_txt" layoutX="86.0" layoutY="38.0" />
-         <Button fx:id="import_btn" layoutX="259.0" layoutY="38.0" mnemonicParsing="false" onAction="#batch_import_url" text="导入" />
-         <Button layoutX="309.0" layoutY="38.0" mnemonicParsing="false" onAction="#batch_check_url" prefHeight="23.0" prefWidth="202.0" text="批量检测" />
-         <Button layoutX="629.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" text="Clear" />
-         <Button layoutX="553.0" layoutY="38.0" mnemonicParsing="false" onAction="#getShell" prefHeight="23.0" prefWidth="122.0" text="Getshell" />
+         <Label layoutX="512.0" layoutY="14.0" text="版本：" />
+         <ComboBox fx:id="comboBox" layoutX="670.0" layoutY="10.0" prefHeight="23.0" prefWidth="202.0" promptText="ALL" />
+         <Label layoutX="24.0" layoutY="53.0" text="路径：" />
+         <TextField fx:id="file_txt" layoutX="84.0" layoutY="49.0" prefHeight="23.0" prefWidth="394.0" />
+         <Button fx:id="import_btn" layoutX="510.0" layoutY="49.0" mnemonicParsing="false" onAction="#batch_import_url" text="导入" />
+         <Button layoutX="670.0" layoutY="49.0" mnemonicParsing="false" onAction="#batch_check_url" prefHeight="23.0" prefWidth="202.0" text="批量检测" />
+         <Button layoutX="1063.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" prefHeight="23.0" prefWidth="76.0" text="Clear" />
+         <Button layoutX="948.0" layoutY="49.0" mnemonicParsing="false" onAction="#getShell" prefHeight="23.0" prefWidth="190.0" text="Getshell" />
       </children>
    </AnchorPane>
    <rotationAxis>
