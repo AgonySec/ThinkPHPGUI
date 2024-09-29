@@ -1,9 +1,9 @@
 # ThinkPHPGUI
 
 - Thinkphp(GUI)漏洞利用工具，支持各版本TP漏洞检测，命令执行，Getshell。
-- JAVAFX可视化编写，博主第一次用javafx来写界面，第一次学习尝试
+- JAVAFX可视化编写，博主第一次用javafx来写界面，第一次学习尝试，仅仅只用于学习尝试
 - 如果缺少什么payload，欢迎提交issues。
-- 根据大佬的项目二次更改https://github.com/Lotus6/ThinkphpGUI，仅仅只用于学习尝试
+- 根据大佬的项目二次更改 https://github.com/Lotus6/ThinkphpGUI
 - 持续更新中
 
 
@@ -44,10 +44,7 @@ java -jar ThinkPHPGUI.jar
 
 # 遇到的一些问题
 
-- 第一次使用Javafx来制作UI，我甚至都不知道一些组件的名字叫啥，还是全英文的，边查边问我的好哥们lockly，才慢慢完成这个项目，前前后后花了2天的时间。😁😁
-- 当时在处理comboBox下拉框组件的时候，不知道还怎么初始化值，所在就很笨方法直接在Application里面写了，就很难顶，后面看nex121大佬的写法才知道有个Controller本来就有个initialize初始化方法，直接将下拉框代码写在这个方法就行了
-- 在处理线程这个问题时，卡了我很久，尤其是在进行批量检测时，硬是要等所以poc全部检测完，界面就会一次性打印出所有信息，会卡那么一段时间，真的很难蚌。。。看了nex121的代码之后，后面使用Platform.runLater方法，再加上*extends* Task类，创建线程来执行任务，就处理好线程了。。。😭😭😭
-- 看着nex121的代码，加上自己修修改改，才完整这个项目🐟🐟🐟
+- 参考了nex121大佬的代码，加上自己修修改改，才完整这个项目🐟🐟🐟
 - 谢谢大佬们的开源精神，让我受益匪浅
 
 # **免责声明**
