@@ -334,7 +334,7 @@ public class TpController {
     void about(ActionEvent event) {
         alert.setTitle("提示:");
         alert.setHeaderText("by Agony");
-        alert.setContentText("博主使用javafx重新写的UI,增添了最新的poc,优化代码结构!"+"\n 项目地址：https://github.com/itchen-2002/ThinkPHPGUI");
+        alert.setContentText("博主使用javafx重新写的UI,增添了最新的poc,优化代码结构!"+"\n 项目地址：https://github.com/AgonySec/ThinkPHPGUI");
         alert.showAndWait();
     }
 }
