@@ -1,5 +1,7 @@
 # ThinkPHPGUI
 
+![](https://badgen.net/github/stars/AgonySec/ThinkphpGUI)![GitHub download counter](https://img.shields.io/github/downloads/AgonySec/ThinkphpGUI/total)
+
 - Thinkphp(GUI)漏洞利用工具，支持各版本TP漏洞检测，命令执行，Getshell。
 - JAVAFX可视化编写，博主第一次用javafx来写界面，第一次学习尝试，仅仅只用于学习尝试
 - 如果缺少什么payload，欢迎提交issues。
