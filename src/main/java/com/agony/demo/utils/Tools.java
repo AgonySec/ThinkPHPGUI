@@ -51,8 +51,58 @@ public class Tools {
     public static BasePayload getPayload(String select) {
         return payloadMap.get(select);
     }
+
+    /**
+     * 检查URL格式是否有效
+     * @param weburl 待检查的URL
+     * @return boolean URL是否有效
+     */
     public static boolean checkTheURL(String weburl) {
-        return weburl.startsWith("http");
+        if (weburl == null || weburl.trim().isEmpty()) {
+            return false;
+        }
+
+        // 正则表达式检查URL格式
+        String urlPattern = "^(https?://)" + // 协议部分 http或https
+                "(([a-zA-Z0-9$_\\.\\-])+\\.)+" + // 域名部分
+                "([a-zA-Z0-9$_\\.\\-])+(:[0-9]{1,5})*" + // 端口部分
+                "(/[a-zA-Z0-9$_\\.@!\\-\\?&=%]*)*$"; // 路径部分
+
+        return weburl.trim().matches(urlPattern);
+    }
+    /**
+     * 格式化URL，添加协议头并规范化
+     * @param weburl 原始URL
+     * @return String 格式化后的URL
+     */
+    public static String addTheURL(String weburl) {
+        if (weburl == null || weburl.trim().isEmpty()) {
+            return "";
+        }
+
+        weburl = weburl.trim();
+
+        // 如果已经包含协议，则直接返回
+        if (weburl.startsWith("http://") || weburl.startsWith("https://")) {
+            return weburl;
+        }
+
+        // 检查是否是有效的域名或IP地址格式
+        String domainPattern = "^([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]{2,}$";
+        String ipPattern = "^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
+        String localhostPattern = "^(localhost|LOCALHOST)$";
+
+        // 如果看起来像域名或IP地址，添加http://前缀
+        if (weburl.matches(domainPattern) ||
+                weburl.matches(ipPattern) ||
+                weburl.matches(localhostPattern) ||
+                weburl.contains(":") || // 包含端口号的情况
+                !weburl.contains("/")) { // 不包含/的简单形式
+            return "http://" + weburl;
+        }
+
+        // 其他情况也添加http://前缀
+        return "http://" + weburl;
     }
     public static String getRandomString(int length) {
         String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -128,12 +178,7 @@ public class Tools {
 //        }
 //        return bp;
 //    }
-    public static String addTheURL(String weburl) {
-        if (!weburl.startsWith("http")) {
-            weburl = "http://" + weburl;
-        }
-        return weburl;
-    }
+
     public static List<String> read_file(String file) throws IOException {
         List<String> list = new ArrayList<>();
         try {
@@ -177,24 +222,4 @@ public class Tools {
     }
 
 
-
-
-
-    /**
-     * 检查url是否可用
-     * @param url
-     * @return
-     */
-//    public static boolean check_url(String url) {
-//        try {
-//            int code = HttpRequest.get(url).code();
-//            if (code == 200) {
-//                return true;
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        return false;
-//    }
 }
